@@ -84,6 +84,7 @@ function prepareData(data, options) {
         let frame = {x: item.frame.x, y: item.frame.y, w: item.frame.w, h: item.frame.h, hw: item.frame.w/2, hh: item.frame.h/2};
         let spriteSourceSize = {x: item.spriteSourceSize.x, y: item.spriteSourceSize.y, w: item.spriteSourceSize.w, h: item.spriteSourceSize.h};
         let sourceSize = {w: item.sourceSize.w, h: item.sourceSize.h};
+        let margin = {x: spriteSourceSize.x, y: spriteSourceSize.y, w: sourceSize.w - spriteSourceSize.w, h: sourceSize.h - spriteSourceSize.h};
         
         let trimmed = item.trimmed;
         
@@ -115,6 +116,7 @@ function prepareData(data, options) {
         ret.push({
             name: name,
             frame: frame,
+            margin: margin,
             spriteSourceSize: spriteSourceSize,
             sourceSize: sourceSize,
             rotated: item.rotated,
